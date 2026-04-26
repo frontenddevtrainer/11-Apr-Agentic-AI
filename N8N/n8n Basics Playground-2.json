@@ -1,0 +1,747 @@
+{
+  "name": "n8n Basics Playground",
+  "nodes": [
+    {
+      "parameters": {
+        "public": true,
+        "initialMessages": "Welcome to the n8n Basics Playground! Type 'joke', 'fact', or anything else.",
+        "options": {
+          "title": "n8n Basics Playground",
+          "responseMode": "lastNode"
+        }
+      },
+      "id": "a575d63b-67d2-4b04-b8d1-8d8c64e9e3d6",
+      "name": "Chat Input",
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        240,
+        304
+      ],
+      "webhookId": "4bc86206-d2d7-44b5-8aa2-63956eaa0141"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "v1",
+              "name": "command",
+              "value": "={{ $json.chatInput.toLowerCase().trim() }}",
+              "type": "string"
+            },
+            {
+              "id": "v2",
+              "name": "requestedAt",
+              "value": "={{ $now.toISO() }}",
+              "type": "string"
+            },
+            {
+              "id": "v3",
+              "name": "appName",
+              "value": "n8n Basics Playground",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6c90595e-5dde-4b16-ac98-8093f63dd9da",
+      "name": "1. Variables",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        512,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": false,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.command }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    },
+                    "rightValue": "joke",
+                    "id": "8fa7dcd5-80c8-4e73-83be-2212d3957451"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Joke"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": false,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.command }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    },
+                    "rightValue": "fact",
+                    "id": "f413cafb-d791-4f64-857c-de1e7925ea6c"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Fact"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": false,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.command }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "notEmpty"
+                    },
+                    "rightValue": "",
+                    "id": "44c8f064-1226-471f-b8c7-783cda713f48"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Help"
+            }
+          ]
+        },
+        "options": {
+          "ignoreCase": true
+        }
+      },
+      "id": "9d59c8b7-9b96-4bc7-aca8-552c7fb17ceb",
+      "name": "2. Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        768,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://official-joke-api.appspot.com/random_joke",
+        "options": {}
+      },
+      "id": "8871f1e1-89c0-419a-80fe-68f537a51e3e",
+      "name": "3. HTTP Request (Joke)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        1024,
+        112
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.setup }}",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty"
+              },
+              "rightValue": "",
+              "id": "a1f8ec6a-f11c-4b0c-b803-7cb74dad7359"
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "d3fa3437-3d9d-4401-99f1-d14a9d7491f0",
+      "name": "4. IF Condition (Joke OK?)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1280,
+        112
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "j1",
+              "name": "output",
+              "value": "={{ $json.setup + \"\\n\\n\" + $json.punchline }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8a7999cf-1bc4-4cfc-b644-e3cb8aea865b",
+      "name": "Format Joke",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1552,
+        32
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "jf1",
+              "name": "output",
+              "value": "Could not fetch a joke. Please try again.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "71ddc49a-f300-4cc9-be7d-68641d2b071a",
+      "name": "Joke Fallback",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1552,
+        208
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://uselessfacts.jsph.pl/api/v2/facts/random",
+        "options": {}
+      },
+      "id": "7a0b519e-d7f3-4721-80a1-bd1dffbee407",
+      "name": "3. HTTP Request (Fact)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        1024,
+        384
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "conditions": [
+            {
+              "leftValue": "={{ $json.text }}",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty"
+              },
+              "rightValue": ""
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "db8dfc85-04ec-4294-beac-0f48f9b22609",
+      "name": "4. IF Condition (Fact OK?)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1280,
+        384
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ff1",
+              "name": "output",
+              "value": "={{ \"Fun fact: \" + $json.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c52df6f0-1de6-4e5b-aab1-b257ef92767e",
+      "name": "Format Fact",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1552,
+        416
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "faf1",
+              "name": "output",
+              "value": "Could not fetch a fact. Please try again.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "3e2d5c0e-a067-4295-80c6-e63e99c9a7a1",
+      "name": "Fact Fallback",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1552,
+        608
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "h1",
+              "name": "output",
+              "value": "Available commands:\n- joke: Get a random joke\n- fact: Get a random fun fact\n\nType a command to get started!",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "bb80241c-1dfc-4172-8ca8-35d07bfe62d0",
+      "name": "Help Message",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1024,
+        624
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "2c633961-c614-462c-bd0e-dcd2a14d07a5",
+      "name": "Run Loop Demo",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        240,
+        1024
+      ]
+    },
+    {
+      "parameters": {
+        "duplicateItem": true,
+        "duplicateCount": 9,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "n1",
+              "name": "number",
+              "value": "={{ $itemIndex + 1 }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4377b536-aae0-472b-8310-5e788a5a5924",
+      "name": "5. Variables (Create List)",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        512,
+        1024
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "lc1",
+              "name": "status",
+              "value": "All 10 numbers processed!",
+              "type": "string"
+            },
+            {
+              "id": "lc2",
+              "name": "completedAt",
+              "value": "={{ $now.toISO() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c6b7838f-ae5c-4f1c-a0fd-7094f8e60c88",
+      "name": "Loop Complete",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1024,
+        1248
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "conditions": [
+            {
+              "leftValue": "={{ $json.number % 2 }}",
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              },
+              "rightValue": 0
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ea124ffc-6f33-49ea-9e35-8b38f43b4804",
+      "name": "7. IF: Is Number Even?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ev1",
+              "name": "label",
+              "value": "even",
+              "type": "string"
+            },
+            {
+              "id": "ev2",
+              "name": "squared",
+              "value": "={{ $json.number * $json.number }}",
+              "type": "number"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "2b297ed3-1269-4af0-9057-8c0015b3ca8e",
+      "name": "Label Even + Compute Square",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1280,
+        880
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "d4e21c0e-000e-43f3-8522-d478488e06d2",
+      "name": "6. For Loop (Split in Batches)",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        768,
+        1024
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "od1",
+              "name": "label",
+              "value": "odd",
+              "type": "string"
+            },
+            {
+              "id": "od2",
+              "name": "squared",
+              "value": "={{ $json.number * $json.number }}",
+              "type": "number"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "b03ecdd1-553d-476a-adc5-c6d369fd812a",
+      "name": "Label Odd + Compute Square",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1280,
+        1168
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## PATH A: Chat Playground\nConcepts covered: Chat Trigger | Variables (Set) | Switch | HTTP Request | IF Condition\n\nTry in the chat widget:\n- joke — fetches a random joke from the official joke API\n- fact — fetches a fun fact from uselessfacts.jsph.pl\n- (anything else) — shows a help message",
+        "height": 200,
+        "width": 820,
+        "color": 5
+      },
+      "id": "317e914c-e112-4869-b79b-e41f889fe1b6",
+      "name": "Sticky Note ce887267",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        192,
+        -112
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## PATH B: For Loop Demo\nConcepts covered: Manual Trigger | Variables | For Loop (Split in Batches) | IF Condition\n\nClick \"Run Loop Demo\" to execute.\nCreates numbers 1-10, loops one-by-one, tests even/odd, and squares each number.",
+        "height": 200,
+        "width": 1080,
+        "color": 4
+      },
+      "id": "038b0917-0e27-419f-bd07-860d972c1a8b",
+      "name": "Sticky Note 365647ee",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        240,
+        1424
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Chat Input": {
+      "main": [
+        [
+          {
+            "node": "1. Variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "1. Variables": {
+      "main": [
+        [
+          {
+            "node": "2. Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "2. Switch": {
+      "main": [
+        [
+          {
+            "node": "3. HTTP Request (Joke)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "3. HTTP Request (Fact)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Help Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "3. HTTP Request (Joke)": {
+      "main": [
+        [
+          {
+            "node": "4. IF Condition (Joke OK?)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "4. IF Condition (Joke OK?)": {
+      "main": [
+        [
+          {
+            "node": "Format Joke",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Joke Fallback",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "3. HTTP Request (Fact)": {
+      "main": [
+        [
+          {
+            "node": "4. IF Condition (Fact OK?)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "4. IF Condition (Fact OK?)": {
+      "main": [
+        [
+          {
+            "node": "Format Fact",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Fact Fallback",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run Loop Demo": {
+      "main": [
+        [
+          {
+            "node": "5. Variables (Create List)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "5. Variables (Create List)": {
+      "main": [
+        [
+          {
+            "node": "6. For Loop (Split in Batches)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "7. IF: Is Number Even?": {
+      "main": [
+        [
+          {
+            "node": "Label Even + Compute Square",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Label Odd + Compute Square",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Label Even + Compute Square": {
+      "main": [
+        [
+          {
+            "node": "6. For Loop (Split in Batches)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "6. For Loop (Split in Batches)": {
+      "main": [
+        [
+          {
+            "node": "Loop Complete",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "7. IF: Is Number Even?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Label Odd + Compute Square": {
+      "main": [
+        [
+          {
+            "node": "6. For Loop (Split in Batches)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": true
+  },
+  "versionId": "37ce69b1-9936-4bc6-86d6-ac067e751d6a",
+  "meta": {
+    "aiBuilderAssisted": true,
+    "instanceId": "0f9878767f2da4e5270c5fd8a918695123b437985586b4dfb4b7fb87112f1d5a"
+  },
+  "id": "K1fDdJVa7ZCtMYo6",
+  "tags": []
+}
