@@ -1,0 +1,467 @@
+{
+  "name": "HR Agent with RAG - Email Auto-Reply",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "9add9cf2-77cf-4d9a-8225-c59f92903e1a",
+      "name": "Initialize HR Knowledge Base",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a1",
+              "name": "text",
+              "value": "LEAVE POLICY: Annual leave - 20 working days per year. Sick leave - 10 days per year, medical certificate required for absences of 3 or more consecutive days. Maternity leave - 16 weeks fully paid for primary caregivers. Paternity leave - 2 weeks fully paid. Emergency/bereavement leave - up to 3 days for immediate family. All leave requests must be submitted at least 5 business days in advance through the HR portal.\n\nREMOTE WORK POLICY: Employees may work remotely up to 3 days per week with manager approval. Standard working hours 9AM-5PM must be maintained unless agreed otherwise. Home office setup expenses up to $500 are reimbursable annually. All remote work must comply with data security guidelines.\n\nPERFORMANCE REVIEW PROCESS: Bi-annual performance reviews conducted in June and December. Written performance plan provided at the start of each year. Rating scale: Exceeds Expectations, Meets Expectations, Needs Improvement, Unsatisfactory. Salary adjustments are linked to year-end performance reviews. Employees may appeal ratings within 10 business days.\n\nCOMPENSATION AND BENEFITS: Annual salary reviews each January. Full health insurance for the employee; 50% for dependents. 401k plan with 4% company match. EAP available 24/7. Annual wellness stipend of $300. Professional development budget of $1,500 per year.\n\nONBOARDING AND OFFBOARDING: New employees have a 90-day probationary period. Onboarding includes 1-week orientation plus role-specific training. Notice period: 2 weeks for employees, 4 weeks for managers. HR conducts exit interviews for all departing employees.\n\nWORKPLACE CONDUCT: Zero tolerance for harassment, discrimination, or bullying. Business casual dress code; formal attire for client meetings. Zero tolerance for alcohol and drugs during working hours. Confidentiality agreements must be maintained even after employment ends. No company-related social media posts without HR approval.\n\nIT AND SECURITY: Work devices must not be used for personal activities. VPN required for all remote access. Passwords must be changed every 90 days. Report security incidents to it@company.com. Personal devices may only access company email via approved apps.\n\nPAYROLL: Salaries paid bi-weekly on Fridays. Timesheets due by noon on last Thursday of each pay period. Overtime compensated at 1.5x regular hourly rate. Expense reimbursements processed within 10 business days.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7865acd8-00a8-4a68-b362-ba33df531967",
+      "name": "HR Policies Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        272,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "pineconeIndex": {
+          "__rl": true,
+          "mode": "id",
+          "value": "hr-policies"
+        },
+        "options": {
+          "clearNamespace": true,
+          "pineconeNamespace": "hr-knowledge-base"
+        }
+      },
+      "id": "0b686e27-0f3c-4b53-9d69-1380c47809aa",
+      "name": "Insert HR Policies into Pinecone",
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1.3,
+      "position": [
+        528,
+        0
+      ],
+      "credentials": {
+        "pineconeApi": {
+          "id": "xpDIeZHPhYCA8seJ",
+          "name": "PineconeApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "dimensions": 1024
+        }
+      },
+      "id": "f4ae0001-8d7c-4d60-b2e7-f78bfc7f06df",
+      "name": "OpenAI Embeddings",
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        432,
+        240
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ezpFw4NGLIp0NyBc",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsonMode": "expressionData",
+        "jsonData": "={{ $json.text }}",
+        "options": {}
+      },
+      "id": "ee491beb-3ede-4637-bea5-3819c8dfe2c1",
+      "name": "HR Document Loader",
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1.1,
+      "position": [
+        800,
+        208
+      ]
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "simple": false,
+        "filters": {
+          "readStatus": "unread"
+        },
+        "options": {}
+      },
+      "id": "f0a7def6-a219-456a-95db-81c6dd83842c",
+      "name": "New Employee HR Email",
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        432
+      ],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "q1hfpuTC0Gbn9QYq",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "sid",
+              "name": "sessionId",
+              "value": "={{ $json.threadId }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "d46505df-697d-4555-bb89-03655528f2fa",
+      "name": "Prepare Email Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        208,
+        432
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ \"Employee email from: \" + $json.from + \"\\nSubject: \" + $json.subject + \"\\n\\nMessage:\\n\" + ($json.text || $json.snippet || \"\") }}",
+        "options": {
+          "systemMessage": "You are a professional and empathetic HR Assistant. Help employees with HR questions using the HR Knowledge Base tool.\n\nInstructions:\n1. ALWAYS search the \"HR Knowledge Base\" tool for relevant policy information first\n2. Provide accurate, specific answers citing exact policy details (numbers, deadlines, procedures)\n3. Be empathetic, professional, and supportive in tone\n4. If a question is not covered in the knowledge base, direct the employee to hr@company.com\n5. Write your response as a professional email reply body only (no subject line)\n6. Sign off as \"Best regards,\\nHR Team\"\n7. Keep responses concise but complete"
+        }
+      },
+      "id": "017ea05d-e9e0-44dc-b047-b68e73259f1b",
+      "name": "HR Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        448,
+        432
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "e5d47146-83bd-482e-8338-df598dd9eca0",
+      "name": "GPT-4o Mini",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        400,
+        624
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ezpFw4NGLIp0NyBc",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "8af8e7fe-5e0e-4e6b-8630-00218b69d468",
+      "name": "Thread Memory",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        544,
+        768
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolDescription": "Search the HR knowledge base for company policies on: annual leave, sick leave, maternity and paternity leave, remote work policy, performance reviews, salary and compensation, health insurance, 401k benefits, onboarding, offboarding, workplace conduct, IT security, and payroll.",
+        "pineconeIndex": {
+          "__rl": true,
+          "mode": "id",
+          "value": "hr-policies"
+        },
+        "options": {
+          "pineconeNamespace": "hr-knowledge-base"
+        }
+      },
+      "id": "8d89ec4b-f38f-4d21-8aa2-8ad743e66e45",
+      "name": "HR Knowledge Base",
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1.3,
+      "position": [
+        768,
+        704
+      ],
+      "credentials": {
+        "pineconeApi": {
+          "id": "xpDIeZHPhYCA8seJ",
+          "name": "PineconeApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "dimensions": 1024
+        }
+      },
+      "id": "f8e8817a-e765-4336-a48d-c0811ea04ad2",
+      "name": "OpenAI Embeddings for RAG",
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        768,
+        896
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "ezpFw4NGLIp0NyBc",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "reply",
+        "messageId": "={{ $('New Employee HR Email').item.json.id }}",
+        "message": "={{ $json.output.replace(/\\n/g, \"<br>\") }}",
+        "options": {
+          "appendAttribution": false,
+          "replyToSenderOnly": true
+        }
+      },
+      "id": "9d8cbd3b-712b-4fa8-9117-fc04354a6a5f",
+      "name": "Reply to Employee Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        848,
+        432
+      ],
+      "webhookId": "295790b9-4624-4e5f-9b02-8d5a8a990a68",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "q1hfpuTC0Gbn9QYq",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Step 1: Load HR Policies into Pinecone\n\nRun this path ONCE (or whenever policies are updated).\n\n1. Edit \"HR Policies Data\" with your actual company policies\n2. Set your Pinecone index name in both Pinecone nodes\n3. Click \"Initialize HR Knowledge Base\" and test the path",
+        "height": 200,
+        "width": 820,
+        "color": 3
+      },
+      "id": "f74f7c45-e247-4aa6-9448-f1e8a295dae2",
+      "name": "Sticky Note 167ec046",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -48,
+        -240
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Step 2: HR Email Auto-Responder\n\nRuns automatically on new unread emails.\n\nCredentials needed:\n- Gmail Account (OAuth2)\n- OpenAI API Key\n- Pinecone API Key\n\nEnsure Step 1 has been run first.",
+        "height": 200,
+        "width": 1060,
+        "color": 5
+      },
+      "id": "8f766e7b-8ebb-42eb-8b09-db3ca61cf626",
+      "name": "Sticky Note cb02ba90",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -576,
+        736
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Initialize HR Knowledge Base": {
+      "main": [
+        [
+          {
+            "node": "HR Policies Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HR Policies Data": {
+      "main": [
+        [
+          {
+            "node": "Insert HR Policies into Pinecone",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Embeddings": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Insert HR Policies into Pinecone",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HR Document Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Insert HR Policies into Pinecone",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "New Employee HR Email": {
+      "main": [
+        [
+          {
+            "node": "Prepare Email Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Email Data": {
+      "main": [
+        [
+          {
+            "node": "HR Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HR Agent": {
+      "main": [
+        [
+          {
+            "node": "Reply to Employee Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT-4o Mini": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "HR Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Thread Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "HR Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HR Knowledge Base": {
+      "ai_tool": [
+        [
+          {
+            "node": "HR Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Embeddings for RAG": {
+      "ai_embedding": [
+        [
+          {
+            "node": "HR Knowledge Base",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert HR Policies into Pinecone": {
+      "main": [
+        []
+      ]
+    },
+    "Reply to Employee Email": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "timeSavedMode": "fixed",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": true
+  },
+  "versionId": "cff2da80-955b-49c8-971b-c769d87edbd6",
+  "meta": {
+    "aiBuilderAssisted": true,
+    "templateCredsSetupCompleted": true,
+    "instanceId": "0f9878767f2da4e5270c5fd8a918695123b437985586b4dfb4b7fb87112f1d5a"
+  },
+  "id": "lM1Sb9q9X9W7jhJH",
+  "tags": []
+}
