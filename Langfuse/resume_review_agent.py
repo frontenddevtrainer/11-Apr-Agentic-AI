@@ -2,72 +2,46 @@ from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langchain_core.tools import tool
 from langchain.agents import create_agent as create_react_agent
+from langfuse import Langfuse
 from langfuse.langchain import CallbackHandler
 
 load_dotenv(".env")
 
+langfuse = Langfuse()
 langfuse_handler = CallbackHandler()
 
 llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 
 
+def render(name: str, **vars) -> str:
+    return langfuse.get_prompt(name, label="production").compile(**vars)
+
+
 @tool
 def score_resume(resume_text: str) -> str:
     """Score a resume out of 10 based on clarity, structure, and completeness."""
-    prompt = f"""
-    Score the following resume out of 10. Consider:
-    - Clarity and writing quality
-    - Structure and formatting
-    - Completeness (contact info, experience, skills, education)
-
-    Resume:
-    {resume_text}
-
-    Respond with: Score: X/10 followed by brief reasoning.
-    """
-    response = llm.invoke(prompt)
-    return response.content
+    return llm.invoke(render("resume-review/score", resume_text=resume_text)).content
 
 
 @tool
 def identify_strengths(resume_text: str) -> str:
     """Identify the top 3 strengths in the resume."""
-    prompt = f"""
-    Identify the top 3 strengths in this resume. Be specific.
-
-    Resume:
-    {resume_text}
-
-    List them as:
-    1. ...
-    2. ...
-    3. ...
-    """
-    response = llm.invoke(prompt)
-    return response.content
+    return llm.invoke(render("resume-review/strengths", resume_text=resume_text)).content
 
 
 @tool
 def suggest_improvements(resume_text: str) -> str:
     """Suggest the top 3 improvements for the resume."""
-    prompt = f"""
-    Suggest the top 3 improvements for this resume. Be actionable and specific.
-
-    Resume:
-    {resume_text}
-
-    List them as:
-    1. ...
-    2. ...
-    3. ...
-    """
-    response = llm.invoke(prompt)
-    return response.content
+    return llm.invoke(render("resume-review/improvements", resume_text=resume_text)).content
 
 
 tools = [score_resume, identify_strengths, suggest_improvements]
 
-agent = create_react_agent(llm, tools)
+agent = create_react_agent(
+    llm,
+    tools,
+    system_prompt=langfuse.get_prompt("resume-review/system", label="production").prompt,
+)
 
 
 def review_resume(resume_text: str) -> str:
