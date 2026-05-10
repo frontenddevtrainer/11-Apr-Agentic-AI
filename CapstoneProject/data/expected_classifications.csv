@@ -1,0 +1,51 @@
+source_id,source_type,category,priority,technical_details,suggested_title
+R001,app_review,Bug,Critical,"Device: Pixel 7, OS: Android 14, App: 3.2.1. Crash on Settings page.",App Crash on Settings Page - Android
+R002,app_review,Praise,Low,,Positive Review - Task Scheduling Feature
+R003,app_review,Bug,High,"App: 3.2.1. Authentication Failed error after password reset.",Login Authentication Failure After Update
+R004,app_review,Feature Request,Medium,,Feature Request: Dark Mode Support
+R005,app_review,Bug,Critical,"App: 3.2.1. Tasks not syncing between phone and web.",Data Sync Broken Between Devices
+R006,app_review,Praise,Low,,Positive Review - Collaboration Features
+R007,app_review,Feature Request,Medium,,Feature Request: Google Calendar Integration
+R008,app_review,Bug,High,"Device: iPhone 14 Pro, iOS 17.3, App: 3.2.0. Dashboard takes 10+ seconds to load.",Dashboard Performance Degradation - iOS
+R009,app_review,Feature Request,Low,,Feature Request: Recurring Task Templates
+R010,app_review,Bug,High,"App: 3.2.0. User logged out involuntarily, local data lost.",Involuntary Logout with Local Data Loss
+R011,app_review,Praise,Low,,Positive Review - Simplicity and Widget
+R012,app_review,Bug,Critical,"App: 3.2.0. Push notifications not functioning.",Push Notifications Completely Non-Functional
+R013,app_review,Feature Request,Medium,,Feature Request: Offline Mode
+R014,app_review,Complaint,Low,,Pricing Complaint - Too Expensive
+R015,app_review,Bug,High,"Device: Samsung Galaxy S24, Android 14, App: 3.2.1. Crash on file attach >5MB.",App Freeze/Crash on Large File Attachment
+R016,app_review,Feature Request,Medium,,Feature Request: Slack Integration
+R017,app_review,Praise,Low,,Positive Review - Long-term User Satisfaction
+R018,app_review,Bug,High,"App: 3.2.0. Search returns irrelevant results.",Search Function Returning Incorrect Results
+R019,app_review,Feature Request,Medium,,Feature Request: Subtask Support
+R020,app_review,Complaint,Medium,,Complaint: Poor Customer Service Response Time
+R021,app_review,Spam,Low,,Spam - Self-Promotion / Channel Advertisement
+R022,app_review,Praise,Low,,Positive Review - Analytics Dashboard
+R023,app_review,Spam,Low,,Spam - Random Text / Scam Link
+R024,app_review,Feature Request,Medium,,Feature Request: PDF Export for Tasks
+R025,app_review,Bug,Critical,"Device: OnePlus 12, Android 14, App: 3.2.1. Crash on startup after update.",App Crash on Startup After Update to v3.2.1
+R026,app_review,Praise,Low,,Positive Review - Collaboration Update
+R027,app_review,Bug,Medium,"Device: unspecified, App: 3.2.1. Badge count does not match actual notifications.",Notification Badge Count Mismatch
+R028,app_review,Feature Request,Low,,Feature Request: Siri Shortcuts Integration
+R029,app_review,Feature Request,Medium,,Feature Request: Advanced Sorting Options
+R030,app_review,Complaint,High,,Complaint: Poor Accessibility / VoiceOver Support
+E001,support_email,Bug,Critical,"Device: Google Pixel 7, OS: Android 14, App: 3.2.1. 100% repro crash on Settings > Account.",App Crash on Settings > Account - Android
+E002,support_email,Bug,Critical,"App: 3.2.1. Authentication Failed error persists after password reset and reinstall.",Login Failure - Authentication Error Post-Update
+E003,support_email,Feature Request,Medium,,Feature Request: Dark Mode
+E004,support_email,Bug,Critical,"Device: Samsung Galaxy S24. Cross-device sync failure for 3 days. Premium plan user.",Cross-Device Data Sync Failure
+E005,support_email,Feature Request,Medium,,Feature Request: Calendar Integration (Google/Outlook)
+E006,support_email,Bug,High,"Device: iPhone 14 Pro, iOS 17.3, App: 3.2.0. 10-15s dashboard load. 150 tasks, 20 projects.",Dashboard Slow Load After v3.2 Update
+E007,support_email,Bug,Critical,"Device: iPad Air 5th gen, iPadOS 17.3. Involuntary logout, 50+ tasks lost from offline mode.",Data Loss After Involuntary Logout - iPad
+E008,support_email,Bug,High,"Device: iPhone 15, iOS 17.4, App: 3.2.0. Push notifications stopped 1 week ago.",Push Notifications Not Working - iOS
+E009,support_email,Complaint,Low,,Pricing Complaint - Expensive vs Competitors
+E010,support_email,Bug,High,"Device: Samsung Galaxy S24, Android 14, App: 3.2.1. Crash on attach >5MB. 4MB works.",File Attachment Crash on Files > 5MB
+E011,support_email,Feature Request,Medium,,Feature Request: Slack Integration (Notifications + Task Creation)
+E012,support_email,Bug,High,"App: 3.2.0, iPhone 14, iOS 17.3. Search returns unrelated results.",Search Algorithm Returning Incorrect Results
+E013,support_email,Bug,High,"iOS. VoiceOver: unlabelled buttons, unannounced dropdowns, no heading structure.",Accessibility Issues - VoiceOver Support Broken
+E014,support_email,Praise,Low,,Positive Feedback - App and Collaboration Features
+E015,support_email,Bug,Low,"Device: Pixel 8, Android 14, App: 3.2.1. Badge shows wrong unread count for 2 weeks.",Notification Badge Count Incorrect
+E016,support_email,Bug,Critical,"Device: OnePlus 12, Android 14, App: 3.2.1. Crash on startup, reinstall does not fix.",Startup Crash After v3.2.1 Update
+E017,support_email,Feature Request,Medium,,Feature Request: PDF Export for Reports
+E018,support_email,Feature Request,Medium,,Feature Request: Subtask / Hierarchical Task Support
+E019,support_email,Complaint,High,,Complaint: No Response to Bug Report for 2 Weeks
+E020,support_email,Feature Request,Medium,,Feature Request: Advanced Sorting and Filtering Options

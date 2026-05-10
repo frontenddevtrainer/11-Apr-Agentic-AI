@@ -1,1 +1,18 @@
 .env
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.venv/
+
+# CapstoneProject
+CapstoneProject/venv/
+CapstoneProject/__pycache__/
+CapstoneProject/**/__pycache__/
+CapstoneProject/.env
+CapstoneProject/data/chroma_db/
+CapstoneProject/data/*.db

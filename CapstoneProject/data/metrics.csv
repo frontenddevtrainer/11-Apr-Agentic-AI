@@ -1,0 +1,2 @@
+run_id,total_processed,bugs_count,features_count,praise_count,complaints_count,spam_count,avg_confidence,processing_time_seconds
+1b7882f3,50,21,15,7,5,2,0.944,398.64

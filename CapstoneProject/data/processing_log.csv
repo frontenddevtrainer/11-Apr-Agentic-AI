@@ -1,0 +1,219 @@
+timestamp,agent_name,source_id,action,details,confidence
+2026-03-15T16:52:14.753161+00:00,csv_reader,R001,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.753499+00:00,csv_reader,R002,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.753653+00:00,csv_reader,R003,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.753810+00:00,csv_reader,R004,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.753969+00:00,csv_reader,R005,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.754135+00:00,csv_reader,R006,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.754271+00:00,csv_reader,R007,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.754394+00:00,csv_reader,R008,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.754538+00:00,csv_reader,R009,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.754677+00:00,csv_reader,R010,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.754786+00:00,csv_reader,R011,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.754943+00:00,csv_reader,R012,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.755057+00:00,csv_reader,R013,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.755179+00:00,csv_reader,R014,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.755284+00:00,csv_reader,R015,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.755390+00:00,csv_reader,R016,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.755492+00:00,csv_reader,R017,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.755595+00:00,csv_reader,R018,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.755739+00:00,csv_reader,R019,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.755898+00:00,csv_reader,R020,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.756074+00:00,csv_reader,R021,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.756178+00:00,csv_reader,R022,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.756287+00:00,csv_reader,R023,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.756436+00:00,csv_reader,R024,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.756569+00:00,csv_reader,R025,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.756747+00:00,csv_reader,R026,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.756875+00:00,csv_reader,R027,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.757077+00:00,csv_reader,R028,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.757243+00:00,csv_reader,R029,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.757488+00:00,csv_reader,R030,loaded,source_type=app_review,0.0
+2026-03-15T16:52:14.757733+00:00,csv_reader,E001,loaded,source_type=support_email,0.0
+2026-03-15T16:52:14.757975+00:00,csv_reader,E002,loaded,source_type=support_email,0.0
+2026-03-15T16:52:14.758119+00:00,csv_reader,E003,loaded,source_type=support_email,0.0
+2026-03-15T16:52:14.758255+00:00,csv_reader,E004,loaded,source_type=support_email,0.0
+2026-03-15T16:52:14.758381+00:00,csv_reader,E005,loaded,source_type=support_email,0.0
+2026-03-15T16:52:14.758474+00:00,csv_reader,E006,loaded,source_type=support_email,0.0
+2026-03-15T16:52:14.758569+00:00,csv_reader,E007,loaded,source_type=support_email,0.0
+2026-03-15T16:52:14.758670+00:00,csv_reader,E008,loaded,source_type=support_email,0.0
+2026-03-15T16:52:14.758778+00:00,csv_reader,E009,loaded,source_type=support_email,0.0
+2026-03-15T16:52:14.758934+00:00,csv_reader,E010,loaded,source_type=support_email,0.0
+2026-03-15T16:52:14.759124+00:00,csv_reader,E011,loaded,source_type=support_email,0.0
+2026-03-15T16:52:14.759311+00:00,csv_reader,E012,loaded,source_type=support_email,0.0
+2026-03-15T16:52:14.759497+00:00,csv_reader,E013,loaded,source_type=support_email,0.0
+2026-03-15T16:52:14.759657+00:00,csv_reader,E014,loaded,source_type=support_email,0.0
+2026-03-15T16:52:14.759802+00:00,csv_reader,E015,loaded,source_type=support_email,0.0
+2026-03-15T16:52:14.759949+00:00,csv_reader,E016,loaded,source_type=support_email,0.0
+2026-03-15T16:52:14.760114+00:00,csv_reader,E017,loaded,source_type=support_email,0.0
+2026-03-15T16:52:14.760264+00:00,csv_reader,E018,loaded,source_type=support_email,0.0
+2026-03-15T16:52:14.760458+00:00,csv_reader,E019,loaded,source_type=support_email,0.0
+2026-03-15T16:52:14.760883+00:00,csv_reader,E020,loaded,source_type=support_email,0.0
+2026-03-15T16:52:15.913727+00:00,classifier,R001,classified,category=Bug,0.95
+2026-03-15T16:52:16.759123+00:00,classifier,R002,classified,category=Praise,0.95
+2026-03-15T16:52:17.465138+00:00,classifier,R003,classified,category=Bug,0.95
+2026-03-15T16:52:18.219699+00:00,classifier,R004,classified,category=Feature Request,0.9
+2026-03-15T16:52:19.448729+00:00,classifier,R005,classified,category=Bug,0.95
+2026-03-15T16:52:20.138607+00:00,classifier,R006,classified,category=Praise,0.95
+2026-03-15T16:52:20.864606+00:00,classifier,R007,classified,category=Feature Request,0.95
+2026-03-15T16:52:21.662945+00:00,classifier,R008,classified,category=Bug,0.95
+2026-03-15T16:52:22.869014+00:00,classifier,R009,classified,category=Feature Request,0.95
+2026-03-15T16:52:23.570661+00:00,classifier,R010,classified,category=Bug,0.95
+2026-03-15T16:52:24.601458+00:00,classifier,R011,classified,category=Praise,0.95
+2026-03-15T16:52:25.214125+00:00,classifier,R012,classified,category=Bug,0.95
+2026-03-15T16:52:26.089811+00:00,classifier,R013,classified,category=Feature Request,0.9
+2026-03-15T16:52:26.688454+00:00,classifier,R014,classified,category=Complaint,0.95
+2026-03-15T16:52:27.441146+00:00,classifier,R015,classified,category=Bug,0.95
+2026-03-15T16:52:28.050422+00:00,classifier,R016,classified,category=Feature Request,0.9
+2026-03-15T16:52:28.799285+00:00,classifier,R017,classified,category=Praise,0.95
+2026-03-15T16:52:29.431903+00:00,classifier,R018,classified,category=Bug,0.95
+2026-03-15T16:52:30.201909+00:00,classifier,R019,classified,category=Feature Request,0.95
+2026-03-15T16:52:30.772291+00:00,classifier,R020,classified,category=Complaint,0.95
+2026-03-15T16:52:31.657784+00:00,classifier,R021,classified,category=Spam,0.95
+2026-03-15T16:52:32.483501+00:00,classifier,R022,classified,category=Praise,0.95
+2026-03-15T16:52:33.090929+00:00,classifier,R023,classified,category=Spam,0.95
+2026-03-15T16:52:33.831836+00:00,classifier,R024,classified,category=Feature Request,0.95
+2026-03-15T16:52:34.548658+00:00,classifier,R025,classified,category=Bug,0.95
+2026-03-15T16:52:35.154349+00:00,classifier,R026,classified,category=Praise,0.95
+2026-03-15T16:52:35.932100+00:00,classifier,R027,classified,category=Bug,0.95
+2026-03-15T16:52:36.724659+00:00,classifier,R028,classified,category=Feature Request,0.95
+2026-03-15T16:52:37.636491+00:00,classifier,R029,classified,category=Feature Request,0.95
+2026-03-15T16:52:38.220245+00:00,classifier,R030,classified,category=Bug,0.9
+2026-03-15T16:52:38.965765+00:00,classifier,E001,classified,category=Bug,0.95
+2026-03-15T16:52:39.769823+00:00,classifier,E002,classified,category=Bug,0.95
+2026-03-15T16:52:40.404080+00:00,classifier,E003,classified,category=Feature Request,0.95
+2026-03-15T16:52:41.063502+00:00,classifier,E004,classified,category=Bug,0.95
+2026-03-15T16:52:41.822287+00:00,classifier,E005,classified,category=Feature Request,0.95
+2026-03-15T16:52:42.895062+00:00,classifier,E006,classified,category=Bug,0.95
+2026-03-15T16:52:43.685386+00:00,classifier,E007,classified,category=Bug,0.95
+2026-03-15T16:52:44.289331+00:00,classifier,E008,classified,category=Bug,0.95
+2026-03-15T16:52:44.966439+00:00,classifier,E009,classified,category=Complaint,0.85
+2026-03-15T16:52:45.665403+00:00,classifier,E010,classified,category=Bug,0.95
+2026-03-15T16:52:46.550289+00:00,classifier,E011,classified,category=Feature Request,0.95
+2026-03-15T16:52:47.425843+00:00,classifier,E012,classified,category=Bug,0.95
+2026-03-15T16:52:48.170226+00:00,classifier,E013,classified,category=Complaint,0.95
+2026-03-15T16:52:48.819163+00:00,classifier,E014,classified,category=Praise,0.95
+2026-03-15T16:52:49.655393+00:00,classifier,E015,classified,category=Bug,0.95
+2026-03-15T16:52:50.378900+00:00,classifier,E016,classified,category=Bug,0.95
+2026-03-15T16:52:51.146225+00:00,classifier,E017,classified,category=Feature Request,0.95
+2026-03-15T16:52:51.924742+00:00,classifier,E018,classified,category=Feature Request,0.95
+2026-03-15T16:52:52.753531+00:00,classifier,E019,classified,category=Complaint,0.95
+2026-03-15T16:52:53.643828+00:00,classifier,E020,classified,category=Feature Request,0.95
+2026-03-15T16:52:56.489604+00:00,bug_analyzer,R001,analyzed,"severity=Critical, component=Settings, known_bug=BUG-101",0.95
+2026-03-15T16:52:58.535927+00:00,bug_analyzer,R003,analyzed,"severity=Critical, component=Authentication, known_bug=BUG-102",0.95
+2026-03-15T16:53:00.514633+00:00,bug_analyzer,R005,analyzed,"severity=Critical, component=Sync, known_bug=none",0.95
+2026-03-15T16:53:03.083779+00:00,bug_analyzer,R008,analyzed,"severity=High, component=Dashboard, known_bug=BUG-104",0.95
+2026-03-15T16:53:04.962139+00:00,bug_analyzer,R010,analyzed,"severity=High, component=Authentication, known_bug=none",0.95
+2026-03-15T16:53:07.335203+00:00,bug_analyzer,R012,analyzed,"severity=High, component=Notifications, known_bug=BUG-105",0.95
+2026-03-15T16:53:10.424916+00:00,bug_analyzer,R015,analyzed,"severity=High, component=Attachments, known_bug=BUG-106",0.95
+2026-03-15T16:53:12.681449+00:00,bug_analyzer,R018,analyzed,"severity=High, component=Search, known_bug=none",0.95
+2026-03-15T16:53:15.143986+00:00,bug_analyzer,R025,analyzed,"severity=Critical, component=Startup, known_bug=BUG-109",0.95
+2026-03-15T16:53:17.569962+00:00,bug_analyzer,R027,analyzed,"severity=Low, component=Notifications, known_bug=BUG-108",0.95
+2026-03-15T16:53:20.388628+00:00,bug_analyzer,R030,analyzed,"severity=High, component=Accessibility, known_bug=none",0.9
+2026-03-15T16:53:23.048177+00:00,bug_analyzer,E001,analyzed,"severity=Critical, component=Settings, known_bug=BUG-101",0.95
+2026-03-15T16:53:25.630615+00:00,bug_analyzer,E002,analyzed,"severity=Critical, component=Authentication, known_bug=BUG-102",0.95
+2026-03-15T16:53:28.035595+00:00,bug_analyzer,E004,analyzed,"severity=Critical, component=Sync, known_bug=none",0.95
+2026-03-15T16:53:30.399486+00:00,bug_analyzer,E006,analyzed,"severity=High, component=Dashboard, known_bug=BUG-104",0.95
+2026-03-15T16:53:33.079991+00:00,bug_analyzer,E007,analyzed,"severity=Critical, component=Sync, known_bug=none",0.95
+2026-03-15T16:53:35.680963+00:00,bug_analyzer,E008,analyzed,"severity=High, component=Notifications, known_bug=BUG-105",0.95
+2026-03-15T16:53:38.741626+00:00,bug_analyzer,E010,analyzed,"severity=High, component=Attachments, known_bug=BUG-106",0.95
+2026-03-15T16:53:41.139359+00:00,bug_analyzer,E012,analyzed,"severity=Critical, component=Search, known_bug=BUG-107",0.95
+2026-03-15T16:53:43.580570+00:00,bug_analyzer,E015,analyzed,"severity=Low, component=Notifications, known_bug=BUG-108",0.95
+2026-03-15T16:53:45.693195+00:00,bug_analyzer,E016,analyzed,"severity=Critical, component=Startup, known_bug=BUG-109",0.95
+2026-03-15T16:53:48.174277+00:00,feature_extractor,R004,analyzed,"feature=Dark mode option for the app, impact=7, planned=True",0.9
+2026-03-15T16:53:50.796770+00:00,feature_extractor,R007,analyzed,"feature=Add Google Calendar integration for automatic event syncing., impact=8, planned=True",0.95
+2026-03-15T16:53:53.532146+00:00,feature_extractor,R009,analyzed,"feature=Recurring task templates, impact=8, planned=False",0.95
+2026-03-15T16:53:55.631073+00:00,feature_extractor,R013,analyzed,"feature=Offline mode for the app, impact=8, planned=True",0.9
+2026-03-15T16:53:58.177269+00:00,feature_extractor,R016,analyzed,"feature=Add Slack integration for task notifications., impact=8, planned=True",0.9
+2026-03-15T16:54:01.009245+00:00,feature_extractor,R019,analyzed,"feature=Support for subtasks to break down larger tasks into smaller steps., impact=8, planned=True",0.95
+2026-03-15T16:54:07.072615+00:00,feature_extractor,R024,analyzed,"feature=Ability to export tasks to PDF, impact=7, planned=True",0.95
+2026-03-15T16:54:09.934009+00:00,feature_extractor,R028,analyzed,"feature=Siri shortcuts integration for quick task creation, impact=8, planned=True",0.95
+2026-03-15T16:54:13.559131+00:00,feature_extractor,R029,analyzed,"feature=Advanced sorting options for tasks, impact=8, planned=True",0.95
+2026-03-15T16:54:15.961836+00:00,feature_extractor,E003,analyzed,"feature=Dark mode option for the app, impact=7, planned=True",0.95
+2026-03-15T16:54:19.111005+00:00,feature_extractor,E005,analyzed,"feature=Integration of Google Calendar and Outlook Calendar for task management, impact=8, planned=True",0.95
+2026-03-15T16:54:21.983751+00:00,feature_extractor,E011,analyzed,"feature=Slack integration for task notifications and management, impact=8, planned=False",0.95
+2026-03-15T16:54:24.876626+00:00,feature_extractor,E017,analyzed,"feature=PDF export for task lists and project summaries, impact=8, planned=True",0.95
+2026-03-15T16:54:28.238031+00:00,feature_extractor,E018,analyzed,"feature=Support for subtasks within tasks, impact=8, planned=True",0.95
+2026-03-15T16:54:31.454356+00:00,feature_extractor,E020,analyzed,"feature=Enhanced sorting and filtering options for tasks, impact=8, planned=True",0.95
+2026-03-15T16:54:35.422054+00:00,ticket_creator,R001,duplicate_detected,duplicate_of=E001,0.0
+2026-03-15T16:54:38.409367+00:00,ticket_creator,R003,duplicate_detected,duplicate_of=E002,0.0
+2026-03-15T16:54:41.408043+00:00,ticket_creator,R004,duplicate_detected,duplicate_of=E003,0.0
+2026-03-15T16:54:44.279123+00:00,ticket_creator,R005,duplicate_detected,duplicate_of=E004,0.0
+2026-03-15T16:54:47.026533+00:00,ticket_creator,R007,duplicate_detected,duplicate_of=E005,0.0
+2026-03-15T16:54:50.902816+00:00,ticket_creator,R008,duplicate_detected,duplicate_of=E006,0.0
+2026-03-15T16:54:53.950426+00:00,ticket_creator,R009,ticket_created,title=Implement Recurring Task Templates,0.95
+2026-03-15T16:54:56.991595+00:00,ticket_creator,R010,duplicate_detected,duplicate_of=E007,0.0
+2026-03-15T16:54:59.831351+00:00,ticket_creator,R012,duplicate_detected,duplicate_of=E008,0.0
+2026-03-15T16:55:02.583403+00:00,ticket_creator,R013,ticket_created,title=Implement Offline Mode for TaskFlow Pro,0.9
+2026-03-15T16:55:06.384609+00:00,ticket_creator,R014,duplicate_detected,duplicate_of=E009,0.0
+2026-03-15T16:55:11.037163+00:00,ticket_creator,R015,duplicate_detected,duplicate_of=E010,0.0
+2026-03-15T16:55:14.321502+00:00,ticket_creator,R016,duplicate_detected,duplicate_of=E011,0.0
+2026-03-15T16:55:17.899009+00:00,ticket_creator,R018,duplicate_detected,duplicate_of=E012,0.0
+2026-03-15T16:55:20.840439+00:00,ticket_creator,R019,duplicate_detected,duplicate_of=E018,0.0
+2026-03-15T16:55:24.025014+00:00,ticket_creator,R020,duplicate_detected,duplicate_of=E019,0.0
+2026-03-15T16:55:28.587208+00:00,ticket_creator,R024,duplicate_detected,duplicate_of=E017,0.0
+2026-03-15T16:55:32.610400+00:00,ticket_creator,R025,duplicate_detected,duplicate_of=E016,0.0
+2026-03-15T16:55:36.360263+00:00,ticket_creator,R027,duplicate_detected,duplicate_of=E015,0.0
+2026-03-15T16:55:39.781801+00:00,ticket_creator,R028,ticket_created,title=Integrate Siri Shortcuts for Quick Task Creation,0.95
+2026-03-15T16:55:44.733086+00:00,ticket_creator,R029,duplicate_detected,duplicate_of=E020,0.0
+2026-03-15T16:55:48.915609+00:00,ticket_creator,R030,duplicate_detected,duplicate_of=E013,0.0
+2026-03-15T16:55:52.830152+00:00,ticket_creator,E001,duplicate_detected,duplicate_of=R001,0.0
+2026-03-15T16:55:57.253504+00:00,ticket_creator,E002,duplicate_detected,duplicate_of=R003,0.0
+2026-03-15T16:56:00.335105+00:00,ticket_creator,E003,duplicate_detected,duplicate_of=R004,0.0
+2026-03-15T16:56:04.685027+00:00,ticket_creator,E004,duplicate_detected,duplicate_of=R005,0.0
+2026-03-15T16:56:07.913429+00:00,ticket_creator,E005,duplicate_detected,duplicate_of=R007,0.0
+2026-03-15T16:56:15.056654+00:00,ticket_creator,E006,duplicate_detected,duplicate_of=R008,0.0
+2026-03-15T16:56:18.513580+00:00,ticket_creator,E007,duplicate_detected,duplicate_of=R010,0.0
+2026-03-15T16:56:22.569405+00:00,ticket_creator,E008,duplicate_detected,duplicate_of=R012,0.0
+2026-03-15T16:56:26.178885+00:00,ticket_creator,E009,duplicate_detected,duplicate_of=R014,0.0
+2026-03-15T16:56:31.112740+00:00,ticket_creator,E010,duplicate_detected,duplicate_of=R015,0.0
+2026-03-15T16:56:34.670521+00:00,ticket_creator,E011,duplicate_detected,duplicate_of=R016,0.0
+2026-03-15T16:56:38.890706+00:00,ticket_creator,E012,duplicate_detected,duplicate_of=R018,0.0
+2026-03-15T16:56:42.801832+00:00,ticket_creator,E013,duplicate_detected,duplicate_of=R030,0.0
+2026-03-15T16:56:46.434935+00:00,ticket_creator,E015,duplicate_detected,duplicate_of=R027,0.0
+2026-03-15T16:56:50.242611+00:00,ticket_creator,E016,duplicate_detected,duplicate_of=R025,0.0
+2026-03-15T16:56:54.527027+00:00,ticket_creator,E017,duplicate_detected,duplicate_of=R024,0.0
+2026-03-15T16:56:57.975567+00:00,ticket_creator,E018,duplicate_detected,duplicate_of=R019,0.0
+2026-03-15T16:57:01.238772+00:00,ticket_creator,E019,duplicate_detected,duplicate_of=R020,0.0
+2026-03-15T16:57:05.038502+00:00,ticket_creator,E020,duplicate_detected,duplicate_of=R029,0.0
+2026-03-15T16:57:07.966291+00:00,quality_critic,R001,reviewed,"score=0.90, needs_review=False",0.9
+2026-03-15T16:57:10.842580+00:00,quality_critic,R003,reviewed,"score=0.80, needs_review=False",0.8
+2026-03-15T16:57:13.323841+00:00,quality_critic,R004,reviewed,"score=0.90, needs_review=False",0.9
+2026-03-15T16:57:15.844189+00:00,quality_critic,R005,reviewed,"score=0.70, needs_review=True",0.7
+2026-03-15T16:57:18.265745+00:00,quality_critic,R007,reviewed,"score=0.90, needs_review=False",0.9
+2026-03-15T16:57:20.630967+00:00,quality_critic,R008,reviewed,"score=0.90, needs_review=False",0.9
+2026-03-15T16:57:22.743349+00:00,quality_critic,R009,reviewed,"score=0.90, needs_review=False",0.9
+2026-03-15T16:57:26.092898+00:00,quality_critic,R010,reviewed,"score=0.80, needs_review=False",0.8
+2026-03-15T16:57:28.113366+00:00,quality_critic,R012,reviewed,"score=0.80, needs_review=False",0.8
+2026-03-15T16:57:30.250670+00:00,quality_critic,R013,reviewed,"score=0.90, needs_review=False",0.9
+2026-03-15T16:57:32.694707+00:00,quality_critic,R014,reviewed,"score=0.80, needs_review=False",0.8
+2026-03-15T16:57:35.435186+00:00,quality_critic,R015,reviewed,"score=0.90, needs_review=False",0.9
+2026-03-15T16:57:37.901677+00:00,quality_critic,R016,reviewed,"score=0.90, needs_review=False",0.9
+2026-03-15T16:57:43.061606+00:00,quality_critic,R018,reviewed,"score=0.70, needs_review=True",0.7
+2026-03-15T16:57:45.274167+00:00,quality_critic,R019,reviewed,"score=0.90, needs_review=False",0.9
+2026-03-15T16:57:47.256092+00:00,quality_critic,R020,reviewed,"score=0.80, needs_review=False",0.8
+2026-03-15T16:57:49.876647+00:00,quality_critic,R024,reviewed,"score=0.80, needs_review=False",0.8
+2026-03-15T16:57:52.348182+00:00,quality_critic,R025,reviewed,"score=0.90, needs_review=False",0.9
+2026-03-15T16:57:54.625722+00:00,quality_critic,R027,reviewed,"score=0.80, needs_review=False",0.8
+2026-03-15T16:57:56.706191+00:00,quality_critic,R028,reviewed,"score=0.90, needs_review=False",0.9
+2026-03-15T16:57:58.911042+00:00,quality_critic,R029,reviewed,"score=0.90, needs_review=False",0.9
+2026-03-15T16:58:01.650328+00:00,quality_critic,R030,reviewed,"score=0.70, needs_review=True",0.7
+2026-03-15T16:58:04.591704+00:00,quality_critic,E001,reviewed,"score=0.90, needs_review=False",0.9
+2026-03-15T16:58:06.843194+00:00,quality_critic,E002,reviewed,"score=0.80, needs_review=False",0.8
+2026-03-15T16:58:09.284597+00:00,quality_critic,E003,reviewed,"score=0.90, needs_review=False",0.9
+2026-03-15T16:58:11.650214+00:00,quality_critic,E004,reviewed,"score=0.80, needs_review=False",0.8
+2026-03-15T16:58:14.018953+00:00,quality_critic,E005,reviewed,"score=0.80, needs_review=False",0.8
+2026-03-15T16:58:16.789965+00:00,quality_critic,E006,reviewed,"score=0.80, needs_review=False",0.8
+2026-03-15T16:58:18.987238+00:00,quality_critic,E007,reviewed,"score=0.90, needs_review=False",0.9
+2026-03-15T16:58:21.031919+00:00,quality_critic,E008,reviewed,"score=0.90, needs_review=False",0.9
+2026-03-15T16:58:23.970493+00:00,quality_critic,E009,reviewed,"score=0.80, needs_review=False",0.8
+2026-03-15T16:58:26.714106+00:00,quality_critic,E010,reviewed,"score=0.90, needs_review=False",0.9
+2026-03-15T16:58:28.874281+00:00,quality_critic,E011,reviewed,"score=0.90, needs_review=False",0.9
+2026-03-15T16:58:31.491581+00:00,quality_critic,E012,reviewed,"score=0.90, needs_review=False",0.9
+2026-03-15T16:58:35.074835+00:00,quality_critic,E013,reviewed,"score=0.90, needs_review=False",0.9
+2026-03-15T16:58:36.977655+00:00,quality_critic,E015,reviewed,"score=0.80, needs_review=False",0.8
+2026-03-15T16:58:39.728731+00:00,quality_critic,E016,reviewed,"score=0.90, needs_review=False",0.9
+2026-03-15T16:58:42.147229+00:00,quality_critic,E017,reviewed,"score=0.90, needs_review=False",0.9
+2026-03-15T16:58:44.589313+00:00,quality_critic,E018,reviewed,"score=0.90, needs_review=False",0.9
+2026-03-15T16:58:46.829521+00:00,quality_critic,E019,reviewed,"score=0.80, needs_review=False",0.8
+2026-03-15T16:58:49.291993+00:00,quality_critic,E020,reviewed,"score=0.90, needs_review=False",0.9

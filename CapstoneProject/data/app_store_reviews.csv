@@ -1,0 +1,31 @@
+review_id,platform,rating,review_text,user_name,date,app_version
+R001,Google Play,1,"App crashes every time I try to open the settings page. Started after the latest update. Using Pixel 7 on Android 14.",Mike T.,2026-03-01,3.2.1
+R002,App Store,5,"Absolutely love this app! The new task scheduling feature is a game changer. Been using it daily for 3 months.",Sarah K.,2026-03-02,3.2.0
+R003,Google Play,2,"Can't login since the last update. I've tried resetting my password three times but still get 'Authentication Failed' error.",James L.,2026-03-02,3.2.1
+R004,App Store,4,"Great app overall but would love to see a dark mode option. My eyes hurt using it at night.",Emily R.,2026-03-03,3.2.0
+R005,Google Play,1,"Data sync is completely broken. My tasks on phone don't match what's on the web. Lost 2 hours of work!",David M.,2026-03-03,3.2.1
+R006,App Store,5,"Works perfectly for managing my team's projects. The collaboration features are top notch!",Lisa W.,2026-03-04,3.2.0
+R007,Google Play,3,"Please add calendar integration with Google Calendar. I have to manually copy events which is frustrating.",Tom H.,2026-03-04,3.2.1
+R008,App Store,1,"App is extremely slow since version 3.2. Takes 10+ seconds to load the dashboard. iPhone 14 Pro, iOS 17.3.",Anna P.,2026-03-05,3.2.0
+R009,Google Play,4,"Would be great to have recurring task templates. I create the same tasks every Monday and it's tedious.",Chris B.,2026-03-05,3.2.1
+R010,App Store,2,"The app logged me out and lost all my local data. This is unacceptable for a productivity app!",Rachel G.,2026-03-06,3.2.0
+R011,Google Play,5,"Just what I needed! Simple, fast, and reliable. The widget on my home screen is super convenient.",Mark D.,2026-03-06,3.2.1
+R012,App Store,1,"Push notifications stopped working completely. I missed 3 important deadlines because of this bug.",Kevin S.,2026-03-07,3.2.0
+R013,Google Play,3,"The app is okay but really needs offline mode. I travel frequently and can't always rely on internet.",Nina F.,2026-03-07,3.2.1
+R014,App Store,2,"Too expensive for what it offers. $9.99/month when competitors charge half that. Considering switching.",Paul J.,2026-03-08,3.2.0
+R015,Google Play,1,"App freezes when attaching files larger than 5MB. Tried with PDF and images. Samsung Galaxy S24, Android 14.",Amy C.,2026-03-08,3.2.1
+R016,App Store,4,"Love the app! Would be amazing if you could add Slack integration for task notifications.",Brian N.,2026-03-09,3.2.0
+R017,Google Play,5,"Been using this for a year now. Best productivity app on the market. The team view is fantastic!",Sophie L.,2026-03-09,3.2.1
+R018,App Store,1,"Search function returns completely wrong results. Searched for 'budget' and got tasks about 'meetings'.",Daniel K.,2026-03-10,3.2.0
+R019,Google Play,3,"Missing functionality for subtasks. Would be very helpful to break down larger tasks into smaller steps.",Olivia M.,2026-03-10,3.2.1
+R020,App Store,2,"Customer service is terrible. Submitted a bug report 2 weeks ago and still no response. Very disappointed.",Ryan T.,2026-03-11,3.2.0
+R021,Google Play,1,"CHECK OUT MY CHANNEL FOR FREE PRODUCTIVITY TIPS bit.ly/spam123 SUBSCRIBE NOW!!!",SpamBot99,2026-03-11,3.2.1
+R022,App Store,4,"The analytics dashboard is really insightful. Helps me track where my time goes each week.",Megan H.,2026-03-12,3.2.0
+R023,Google Play,1,"asdfghjkl random text 12345 test test buy cheap watches www.scam.com",xX_user_Xx,2026-03-12,3.2.1
+R024,App Store,3,"Please add the ability to export tasks to PDF. Need this for my weekly reports to management.",Jason W.,2026-03-13,3.2.0
+R025,Google Play,2,"App crashes on startup after updating to v3.2.1. Have to reinstall every time. OnePlus 12, Android 14.",Lucy A.,2026-03-13,3.2.1
+R026,App Store,5,"The new collaboration update is brilliant! Sharing tasks with my team has never been easier.",Carlos R.,2026-03-14,3.2.0
+R027,Google Play,1,"Notification badges show wrong count. Shows 5 unread but I only have 1. Very confusing and annoying.",Helen Z.,2026-03-14,3.2.1
+R028,App Store,4,"Would love to see Siri shortcuts integration for quick task creation. That would be a killer feature!",Frank B.,2026-03-15,3.2.0
+R029,Google Play,3,"The app needs better sorting options. Can only sort by date, but I need to sort by priority and project.",Diana V.,2026-03-15,3.2.1
+R030,App Store,2,"Poor accessibility support. VoiceOver reads buttons incorrectly and some elements are not labelled.",Grace P.,2026-03-15,3.2.0
